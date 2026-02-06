@@ -48,7 +48,6 @@ class OrderPage(BasePage):
         self.click_on_element(Oder_page_locators.Metro_one)
         self.find_element_with_wait(Oder_page_locators.Metro_one).send_keys(Person.random_station)
         self.find_element_with_wait(Oder_page_locators.Metro_one).send_keys(Keys.DOWN, Keys.ENTER)
-        # return self
 
     @allure.step('Заполняем поле Телефон')
     def fill_phone_field(self):
