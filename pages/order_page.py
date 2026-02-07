@@ -63,6 +63,10 @@ class OrderPage(BasePage):
     @allure.step("Подтвердить заказ")
     def confirm_order(self):
         self.click_on_element(order_page_locators.CONFIRM_YES_BUTTON)
+        
+        @allure.step("Проверить, что заказ успешно оформлен")
+def is_order_success(self):
+    return self.find_element(order_page_locators.ORDER_SUCCESS).is_displayed()
 
 
 
