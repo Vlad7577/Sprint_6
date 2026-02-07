@@ -2,12 +2,15 @@ from pages.order_page import OrderPage
 import allure
 import pytest
 
+
+@allure.title("Оформление заказа самоката через кнопки Заказать")
 @pytest.mark.parametrize('button', ['header_button', 'page_button'])
 def test_order_upp_success(driver, button):
+
     order_page = OrderPage(driver)
     order_page.open_url()
 
-    with allure.step(f"Проверяем возможность сделать заказ самоката через кнопку Заказать вверху лэндинга"):
+    with allure.step("Проверяем возможность сделать заказ самоката"):
         order_page.click_on_element_make_order_header(button=button)
         order_page.name_field_find_element_with_wait()
         order_page.fill_name_field()
@@ -23,6 +26,7 @@ def test_order_upp_success(driver, button):
         order_page.click_on_element_create_order()
         order_page.click_on_element_confirm_order_yes()
 
-
+    with allure.step("Проверяем успешное оформление заказа"):
+        assert order_page.is_order_success(), "Заказ не был оформлен"
 
 
