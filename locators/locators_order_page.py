@@ -20,3 +20,5 @@ class order_page_locators:
 
     CREATE_ORDER_BUTTON = (By.XPATH, "//button[text()='Заказать']")
     CONFIRM_YES_BUTTON = (By.XPATH, "//button[text()='Да']")
+    
+    ORDER_SUCCESS = (By.CLASS_NAME, "Order_ModalHeader")
