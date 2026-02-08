@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class order_page_locators:
+class Order_Page_Locators:
 
     INPUT_NAME = (By.CSS_SELECTOR, "input[placeholder='* Имя']")
     INPUT_SURNAME = (By.CSS_SELECTOR, "input[placeholder='* Фамилия']")
